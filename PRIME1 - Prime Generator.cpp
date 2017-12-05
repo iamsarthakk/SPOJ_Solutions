@@ -1,0 +1,55 @@
+/*PRIME1 - Prime Generator
+#number-theory
+Peter wants to generate some prime numbers for his cryptosystem. Help him! Your task is to generate all prime numbers between two given numbers!
+
+Input
+The input begins with the number t of test cases in a single line (t<=10). In each of the next t lines there are two numbers m and n (1 <= m <= n <= 1000000000, n-m<=100000) separated by a space.
+
+Output
+For every test case print all prime numbers p such that m <= p <= n, one number per line, test cases separated by an empty line.
+
+Example
+Input:
+2
+1 10
+3 5
+
+Output:
+2
+3
+5
+7
+
+3
+5*/
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main(void)
+{
+int n,m,t,i,j,s,flag;
+cin>>t;
+while(t--)
+{
+cin>>n>>m;
+for(i=n;i<=m;i++)
+{
+flag=0;
+if(i==1)
+flag=1;
+s=sqrt(i);
+for(j=2;j<=s;j++)
+{
+if(i%j==0)
+{
+flag=1;
+break;
+}
+}
+if(flag==0)
+cout<<i<<endl;
+}
+cout<<endl;
+}
+return 0;
+}   
