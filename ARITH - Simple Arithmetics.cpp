@@ -273,3 +273,168 @@ void calc_mulity() {
     }  
       
 }  
+
+
+
+
+/*Below is different version of solution which is not applicable for large inputs but works well with small inputs,This describe the use of 
+  funcyion setw().
+  #include <iostream>
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <iomanip>
+using namespace std;
+
+int main(){
+    long long int T,i,x,y,sum,difference,multi,temp,count=0,temp1,temp2,count1,count2=0,count3;
+    char op;
+       cin>>T;
+    for (i=0;i<T;i++){
+        cin>>x>>op>>y;
+    
+  switch(op){
+          case'+':count=0;
+                  sum=x+y;
+                  temp=sum;
+                  
+                  while(temp>0)
+                {
+                 temp=temp/10;
+                 count++;
+                      }
+                 
+                  cout<<setw(count)<<x<<endl;
+                  cout<<'+'<<setw(count-1)<<y<<endl;
+          
+          
+                  while(count!=0){
+                      cout<<'-';
+                      count--;
+                  }
+                  cout<<endl;
+                  cout<<sum<<endl;
+                  cout<<endl;
+                  break;
+          
+          case'-':count=0;
+                  count2=0;
+                  difference=x-y;
+                  if(x>y){
+                      temp=x;
+                       while(temp>0)
+                {
+                 temp=temp/10;
+                 count++;
+                      }
+          
+                temp1=y;
+               while(temp1>0)
+                {
+                 temp1=temp1/10;
+                 count2++;
+                      }
+                      
+                  }
+          
+                 else{
+                     temp=y;
+                      while(temp>0)
+                {
+                 temp=temp/10;
+                 count2++;
+                 count++;
+                      }
+                     count++;
+                 }
+                temp=difference;
+                while(temp2>0)
+                {
+                 temp2=temp2/10;
+                 count1++;
+                      }
+               if(count==count2)
+                          count++;
+                
+                 cout<<setw(count)<<x<<endl;
+                 cout<<setw(count-count2)<<'-'<<y<<endl;
+                 
+                 if(count1>count2+1){
+                         count3=count1;
+                    }
+                 else
+                         count3=count2+1;
+                 cout<<setw(count-count2-1);
+                 while(count3+1!=0){
+                      cout<<'-';
+                      count3--;
+                  }
+                 cout<<endl<<setw(count)<<difference<<endl;
+                 cout<<endl;
+                 break;
+               
+          case'*':count=0;
+                  count2=0;
+        
+                  multi=x*y;
+                  temp=multi;
+                      
+                  while(temp>0)
+                {
+                 temp=temp/10;
+                 count++;
+                      //cout<<temp<<" "<<count<<endl;
+                      }
+          
+                temp1=y;
+               while(temp1>0)
+                {
+                 temp1=temp1/10;
+                 count2++;
+                      }
+               count1=count;
+               //cout<<count;
+                 if(x<y)
+                    count++;
+                 
+                 //count+=2;
+                 cout<<setw(count)<<x<<endl;
+                 cout<<setw(count-count2)<<'*'<<y<<endl;
+          
+                  temp=y;
+                  // cout<<setw(count);
+                if(temp/10!=0){
+                    cout<<setw(count-count2);
+                   while(temp>0)
+                {
+                 temp=temp/10;
+                 cout<<'-';
+                      }
+                  cout<<'-';
+                }
+          
+                  temp=y;
+                  if(temp/10!=0){
+                  while(temp>0){
+                      temp1=x*(temp%10);
+                      cout<<endl<<setw(count)<<temp1;
+                      temp/=10;
+                      count--;
+                  }
+                      cout<<endl;
+                  }
+                  
+                  while(count1!=0){
+                      cout<<'-';
+                      count1--;
+                  }
+                  
+                 
+                 cout<<endl<<setw(count1)<<multi<<endl;
+          cout<<endl;
+          }
+    }
+    return 0;
+}
+*/
+  
